@@ -2,8 +2,9 @@ import datetime
 import csv
 from collections import defaultdict
 
-from pep_parse.settings import (BASE_DIR, COUNT, DT_FORMAT, RESULTS,
-                                STATUS_CSV, STATUS_SUMMARY, SUMMARY)
+from pep_parse.settings import (BASE_DIR, COUNT, DT_FORMAT,
+                                RESULTS, STATUS_CSV, STATUS_SUMMARY,
+                                SUMMARY, CSV)
 
 
 class PepParsePipeline:
@@ -20,7 +21,7 @@ class PepParsePipeline:
 
     def close_spider(self, spider):
         date_time = datetime.datetime.utcnow().strftime(DT_FORMAT)
-        filename = f'{STATUS_SUMMARY}_{date_time}.csv'
+        filename = f'{STATUS_SUMMARY}_{date_time}.{CSV}'
         fieldnames = [STATUS_CSV, COUNT]
         with open(
                 f'{self.results_dir}/{filename}', 'w', newline=''
