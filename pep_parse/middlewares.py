@@ -18,19 +18,20 @@ class PepParseSpiderMiddleware:
         middleware and into the spider.'''
         return None
 
-    def process_spider_output(self, response: any, result: any, spider: any) -> Iterable[any]:
+    def process_spider_output(self, response: any, result: any, spider: any):
         '''Called with the results returned from the Spider, after
         it has processed the response.
         Must return an iterable of Request, or item objects.'''
         for i in result:
             yield i
 
-    def process_spider_exception(self, response: any, exception: any, spider: any) -> None:
+    def process_spider_exception(self, response: any,
+                                 exception: any, spider: any) -> None:
         '''Called when a spider or process_spider_input() method
         (from other spider middleware) raises an exception.'''
         pass
 
-    def process_start_requests(self, start_requests: any, spider: any) ->Iterable[any]:
+    def process_start_requests(self, start_requests: any, spider: any):
         '''Called with the start requests of the spider, and works
         similarly to the process_spider_output() method, except
         that it doesn’t have a response associated.'''
@@ -62,7 +63,8 @@ class PepParseDownloaderMiddleware:
         '''Called with the response returned from the downloader.'''
         return response
 
-    def process_exception(self, request: any, exception: any, spider: any) -> None:
+    def process_exception(self, request: any,
+                          exception: any, spider: any) -> None:
         '''Called when a download handler or a process_request()
         (from other downloader middleware) raises an exception.'''
         pass
