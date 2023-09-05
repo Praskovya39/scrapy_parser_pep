@@ -23,9 +23,9 @@ class PepParseSpiderMiddleware:
         return None
 
     def process_spider_output(self, response: Response,
-                              result: Iterable[Union[Request, Item]],
+                              result: Iterable[Union[Request]],
                               spider: Spider
-                              ) -> Iterable[Union[Request, Item]]:
+                              ) -> Iterable[Union[Request]]:
         '''Called with the results returned from the Spider, after
         it has processed the response.
         Must return an iterable of Request, or item objects.'''
