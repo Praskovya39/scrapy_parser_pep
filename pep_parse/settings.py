@@ -21,8 +21,8 @@ CSV = 'csv'
 DT_FORMAT = '%Y-%m-%d_%H-%M-%S'
 
 FEEDS = {
-    f'{RESULTS}/pep_%(time)s.csv': {
-        'format': 'csv',
+    f'{RESULTS}/pep_%(time)s.CSV': {
+        'format': 'CSV',
         'fields': ['number', 'name', 'status'],
         'overwrite': True
     },
